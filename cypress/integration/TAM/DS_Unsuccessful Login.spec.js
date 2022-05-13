@@ -19,7 +19,8 @@ describe('Unsuccessful Login', () => {
             cy.get('.button').contains('Login').click()
             cy.get('[id^=username-error]').should('have.text', 'This field is required.')
             cy.get('[id^=password-error]').should('have.text', 'This field is required.')
-        
+          
+            
         })
         it('Verify unsuccessful login invalid email, valid password', () => {
             
@@ -37,7 +38,7 @@ describe('Unsuccessful Login', () => {
             cy.get('#password').clear().type('yhhsdfkkskdff')
             cy.get('.checkbox').contains('I agree to storage of my data according to').click()
             cy.get('.button').contains('Login').click()
-            cy.get('.woocommerce-error').contains('ERROR').should('have.text', 'ERROR: Incorrect username or password.')
+            cy.get('.woocommerce-error').contains('ERROR: Incorrect username or password.').should('have.text', 'ERROR: Incorrect username or password.')
   
         })
     })
